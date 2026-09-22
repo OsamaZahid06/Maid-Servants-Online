@@ -1,3 +1,69 @@
+# Maid & Servants Online
+
+Maid & Servants Online is a React frontend for discovering trusted domestic help. Users can browse maids, cooks, nannies, drivers, cleaners, caregivers, gardeners, and babysitters through searchable profiles and location-based recommendations.
+
+## Frontend Scope
+
+This project focuses on the complete client-side experience:
+
+- Responsive marketplace landing page and navigation
+- Worker profiles with skills, languages, ratings, salary, experience, and availability
+- Worker search, category filters, sorting, favorites, and profile details
+- City-based worker discovery with a privacy-friendly map view
+- Job browsing, job details, saved jobs, and application states
+- Local messaging, notifications, hiring requests, account profile, and settings screens
+- Registration and login interface with browser-local demo state
+- AI home-help assistant with conversational replies, daily-life answers, city suggestions, salary ranges, and nearby worker recommendations
+- Responsive design, page transitions, hover states, focus states, and reduced-motion support
+
+## Technology
+
+- React 19
+- React Router
+- Create React App
+- Lucide React icons
+- CSS with responsive layouts and reusable motion styles
+- Browser `localStorage` for demo persistence
+
+There is currently no backend, database, authentication service, real-time chat service, or external AI API. Worker profiles, messages, favorites, and account state are frontend demo data stored in the browser.
+
+## Project Structure
+
+```text
+src/
+	App.js                  Main routes, page components, worker data, and assistant logic
+	App.css                 Main visual system and component styles
+	index.css               Global typography and browser defaults
+	motion.css              Animations and reduced-motion rules
+	responsive.css          Device and responsive layout rules
+	components/SiteChrome.js
+													 Navbar and footer
+	hooks/useStoredState.js Browser-local state helper
+```
+
+## Available Scripts
+
+### `npm start`
+
+Starts the development server at [http://localhost:3000](http://localhost:3000).
+
+### `npm test`
+
+Runs the React Testing Library test suite.
+
+### `npm run build`
+
+Creates an optimized production build in the `build` directory.
+
+## Getting Started
+
+```bash
+npm install
+npm start
+```
+
+The app is intended as a polished frontend prototype. A future backend can replace the local demo data with real profiles, secure authentication, messaging, maps, and AI services without changing the overall user-facing structure.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,68 +135,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 [new_code]
-# Maid & Servants Online
 
-Maid & Servants Online is a React frontend for discovering trusted domestic help. Users can browse maids, cooks, nannies, drivers, cleaners, caregivers, gardeners, and babysitters through searchable profiles and location-based recommendations.
-
-## Frontend Scope
-
-This project focuses on the complete client-side experience:
-
-- Responsive marketplace landing page and navigation
-- Worker profiles with skills, languages, ratings, salary, experience, and availability
-- Worker search, category filters, sorting, favorites, and profile details
-- City-based worker discovery with a privacy-friendly map view
-- Job browsing, job details, saved jobs, and application states
-- Local messaging, notifications, hiring requests, account profile, and settings screens
-- Registration and login interface with browser-local demo state
-- AI home-help assistant with conversational replies, daily-life answers, city suggestions, salary ranges, and nearby worker recommendations
-- Responsive design, page transitions, hover states, focus states, and reduced-motion support
-
-## Technology
-
-- React 19
-- React Router
-- Create React App
-- Lucide React icons
-- CSS with responsive layouts and reusable motion styles
-- Browser `localStorage` for demo persistence
-
-There is currently no backend, database, authentication service, real-time chat service, or external AI API. Worker profiles, messages, favorites, and account state are frontend demo data stored in the browser.
-
-## Project Structure
-
-```text
-src/
-	App.js                  Main routes, page components, worker data, and assistant logic
-	App.css                 Main visual system and component styles
-	index.css               Global typography and browser defaults
-	motion.css              Animations and reduced-motion rules
-	responsive.css          Device and responsive layout rules
-	components/SiteChrome.js
-													 Navbar and footer
-	hooks/useStoredState.js Browser-local state helper
-```
-
-## Available Scripts
-
-### `npm start`
-
-Starts the development server at [http://localhost:3000](http://localhost:3000).
-
-### `npm test`
-
-Runs the React Testing Library test suite.
-
-### `npm run build`
-
-Creates an optimized production build in the `build` directory.
-
-## Getting Started
-
-```bash
-npm install
-npm start
-```
-
-The app is intended as a polished frontend prototype. A future backend can replace the local demo data with real profiles, secure authentication, messaging, maps, and AI services without changing the overall user-facing structure.
