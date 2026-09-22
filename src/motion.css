@@ -1,0 +1,318 @@
+/* Shared motion primitives. Keep movement quiet and opt out for reduced-motion users. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(2deg);
+  }
+}
+
+@keyframes hero-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(2deg);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(1deg);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes accent-line {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(236, 129, 106, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(236, 129, 106, 0);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-copy,
+.hero-art,
+.page-header,
+.info-hero,
+.contact-layout,
+.chat-layout,
+.profile-dashboard,
+.settings-list,
+.notification-list,
+.request-list {
+  animation: rise-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-art {
+  animation-delay: 0.08s;
+}
+.image-frame {
+  animation: hero-drift 8s ease-in-out 1s infinite;
+}
+.hero-stat {
+  animation: rise-in 0.55s 0.35s both;
+}
+.hero-float {
+  animation: rise-in 0.55s 0.5s both;
+}
+
+.hero:before {
+  animation: gentle-float 9s ease-in-out infinite;
+}
+
+.hero-search,
+.job-search {
+  animation: rise-in 0.65s 0.28s both;
+}
+
+.hero-search button,
+.button-small {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-search button::after,
+.button-small::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 38%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-120%);
+}
+
+.hero-search button:hover::after,
+.button-small:hover::after {
+  animation: shimmer 0.7s ease both;
+}
+
+.category-card,
+.worker-card,
+.job-card,
+.testimonial,
+.info-block,
+.step {
+  animation: rise-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.category-card::after,
+.worker-card::after,
+.job-card::after,
+.testimonial::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--coral);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.category-card:hover::after,
+.worker-card:hover::after,
+.job-card:hover::after,
+.testimonial:hover::after {
+  transform: scaleX(1);
+}
+
+.category-card,
+.worker-card,
+.job-card,
+.testimonial {
+  position: relative;
+}
+
+.category-card:hover,
+.worker-card:hover,
+.job-card:hover,
+.testimonial:hover {
+  transform: translateY(-7px);
+}
+
+.category-card:nth-child(2),
+.worker-card:nth-child(2),
+.job-card:nth-child(2),
+.testimonial:nth-child(2),
+.info-block:nth-child(2),
+.step:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.category-card:nth-child(3),
+.worker-card:nth-child(3),
+.job-card:nth-child(3),
+.testimonial:nth-child(3),
+.info-block:nth-child(3),
+.step:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.category-card:nth-child(4),
+.worker-card:nth-child(4),
+.job-card:nth-child(4),
+.info-block:nth-child(4) {
+  animation-delay: 0.18s;
+}
+
+.detail-section {
+  animation: fade-in 0.65s ease both;
+}
+
+.arrow-link svg,
+.view-link svg {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.arrow-link:hover svg,
+.view-link:hover svg {
+  transform: translateX(5px);
+}
+
+.worker-image img,
+.image-frame img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.8s ease;
+}
+
+.worker-card:hover .worker-image img,
+.hero-art:hover .image-frame img {
+  transform: scale(1.06);
+  filter: saturate(1) contrast(1.02);
+}
+.detail-section:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.detail-section:nth-child(3) {
+  animation-delay: 0.16s;
+}
+.detail-section:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.nav-links.open {
+  animation: drawer-in 0.24s ease-out both;
+}
+.menu-btn svg,
+.button svg,
+.icon-button svg,
+.send-button svg {
+  transition: transform 0.2s ease;
+}
+.menu-btn:hover svg {
+  transform: rotate(6deg) scale(1.06);
+}
+.button:active {
+  transform: translateY(0) scale(0.98);
+}
+.heart-btn {
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.heart-btn:hover {
+  transform: scale(1.1) rotate(-8deg);
+  background: #fff;
+}
+.heart-btn.saved svg {
+  animation: pulse-dot 0.7s ease both;
+}
+.button:focus-visible,
+.menu-btn:focus-visible,
+.icon-button:focus-visible,
+.send-button:focus-visible,
+.text-btn:focus-visible,
+.heart-btn:focus-visible,
+.faq button:focus-visible {
+  outline: 3px solid rgba(236, 129, 106, 0.35);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.availability,
+.online-dot,
+.eyebrow-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
